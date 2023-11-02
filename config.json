@@ -1,0 +1,34 @@
+{
+  "reverse-proxies": [
+    {
+      "host": "127.0.0.1",
+      "endpoint": "/api",
+      "target": "http://www.bing.com"
+    },
+    {
+      "host": "127.0.0.1",
+      "endpoint": "/test",
+      "target": "http://www.google.com"
+    }
+  ],
+  "load-balancers": [
+    {
+      "host": "127.0.0.1",
+      "endpoint": "/rev1",
+      "targets": [
+        "http://www.github.com",
+        "http://www.google.com",
+        "http://www.bing.com"
+      ]
+    },
+    {
+      "host": "127.0.0.1",
+      "endpoint": "/rev2",
+      "targets": [
+        "http://www.soundcloud.com",
+        "http://www.bing.com",
+        "http://www.google.com"
+      ]
+    }
+  ]
+}
